@@ -20,4 +20,11 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             timeBlock.classList.add("future");
         }
- 
+        const hourLabel = document.createElement("div");
+        hourLabel.textContent = `${hour}:00`;
+
+        const eventInput = document.createElement("textarea");
+        eventInput.setAttribute("data-hour", hour);
+
+        const saveButton = document.createElement("button");
+        saveButton.textContent = "Save";
