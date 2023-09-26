@@ -1,5 +1,11 @@
 body {
     font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    
+    
+    height: 100vh; 
+    margin: 0;
 }
 
 header {
@@ -7,30 +13,42 @@ header {
     color: white;
     text-align: center;
     padding: 10px;
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+.time-blocks {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    width: 100%; 
+    box-sizing: border-box; 
+    padding: 0 10px; 
 }
 
 .time-block {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-basis: calc(20% - 20px);
+    flex-grow: 1; 
     border: 1px solid #ccc;
     padding: 10px;
-    margin: 10px;
+    margin: 10px 0; 
+    text-align: center;
 }
+
 .past {
-    background-color: yellow ; 
+    background-color: red !important;
 }
 
 .present {
-    background-color: red   ;
+    background-color: blue !important;
 }
 
 .future {
-    background-color: blue ;
+    background-color: green !important;
 }
 
 textarea {
-    width: 80%;
+    width: 100%; 
     border: none;
     resize: none;
 }
@@ -41,4 +59,5 @@ button {
     border: none;
     padding: 5px 10px;
     cursor: pointer;
+    float: right;
 }
