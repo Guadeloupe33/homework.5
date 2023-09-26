@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (hour < currentHour) {
             timeBlock.classList.add("past");
         } else if (hour === currentHour) {
-            timeBlock.classList.add("present");
+            timeBlock.classList.add( "present");
         } else {
             timeBlock.classList.add("future");
         }
@@ -28,3 +28,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const saveButton = document.createElement("button");
         saveButton.textContent = "Save";
+        const savedEvent = localStorage.getItem(`event_${hour}`);
+        if (savedEvent) {
+            eventInput.value = savedEvent;
+        }
+
+        // Save event to local storage when the "Save" button is clicked
+        saveButton.addEventListener("click", function () {
+            const eventText = eventInput.value;
+            localStorage.setItem(`event_${hour}`, eventText);
+        });
+
+        timeBlock.appendChild(hourLabel);
+        timeBlock.appendChild(eventInput);
+        timeBlock.appendChild(saveButton);
+
+        timeBlocksElement.appendChild(timeBlock);
+    }
+});

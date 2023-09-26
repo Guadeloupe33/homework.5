@@ -18,15 +18,15 @@ header {
     margin: 10px;
 }
 .past {
-    background-color: #d3d3d3;
+    background-color: yellow ; 
 }
 
 .present {
-    background-color: #ff6961;
+    background-color: red   ;
 }
 
 .future {
-    background-color: #77dd77;
+    background-color: blue ;
 }
 
 textarea {
